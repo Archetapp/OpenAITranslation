@@ -14,6 +14,10 @@
 		26B6891D2B658B2600B81602 /* LiveTranslationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B6891C2B658B2600B81602 /* LiveTranslationTests.swift */; };
 		26B689272B658B2600B81602 /* LiveTranslationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B689262B658B2600B81602 /* LiveTranslationUITests.swift */; };
 		26B689292B658B2600B81602 /* LiveTranslationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B689282B658B2600B81602 /* LiveTranslationUITestsLaunchTests.swift */; };
+		26B689372B658B5400B81602 /* SwiftWhisper in Frameworks */ = {isa = PBXBuildFile; productRef = 26B689362B658B5400B81602 /* SwiftWhisper */; };
+		26C20BD12B658F54003F5CED /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C20BD02B658F54003F5CED /* Settings.swift */; };
+		26C20BD52B659774003F5CED /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C20BD42B659774003F5CED /* ViewModel.swift */; };
+		26C20BD82B65979B003F5CED /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 26C20BD72B65979B003F5CED /* OpenAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,8 @@
 		26B689222B658B2600B81602 /* LiveTranslationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveTranslationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26B689262B658B2600B81602 /* LiveTranslationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTranslationUITests.swift; sourceTree = "<group>"; };
 		26B689282B658B2600B81602 /* LiveTranslationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTranslationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		26C20BD02B658F54003F5CED /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		26C20BD42B659774003F5CED /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C20BD82B65979B003F5CED /* OpenAI in Frameworks */,
+				26B689372B658B5400B81602 /* SwiftWhisper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +105,8 @@
 			children = (
 				26B6890A2B658B2400B81602 /* LiveTranslationApp.swift */,
 				26B6890C2B658B2400B81602 /* ContentView.swift */,
+				26C20BD42B659774003F5CED /* ViewModel.swift */,
+				26C20BD02B658F54003F5CED /* Settings.swift */,
 				26B6890E2B658B2500B81602 /* Assets.xcassets */,
 				26B689102B658B2500B81602 /* LiveTranslation.entitlements */,
 				26B689112B658B2500B81602 /* Preview Content */,
@@ -145,6 +155,10 @@
 			dependencies = (
 			);
 			name = LiveTranslation;
+			packageProductDependencies = (
+				26B689362B658B5400B81602 /* SwiftWhisper */,
+				26C20BD72B65979B003F5CED /* OpenAI */,
+			);
 			productName = LiveTranslation;
 			productReference = 26B689072B658B2400B81602 /* LiveTranslation.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +231,10 @@
 				Base,
 			);
 			mainGroup = 26B688FE2B658B2400B81602;
+			packageReferences = (
+				26B689352B658B5400B81602 /* XCRemoteSwiftPackageReference "SwiftWhisper" */,
+				26C20BD62B65979B003F5CED /* XCRemoteSwiftPackageReference "OpenAI" */,
+			);
 			productRefGroup = 26B689082B658B2400B81602 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,7 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C20BD12B658F54003F5CED /* Settings.swift in Sources */,
 				26B6890D2B658B2400B81602 /* ContentView.swift in Sources */,
+				26C20BD52B659774003F5CED /* ViewModel.swift in Sources */,
 				26B6890B2B658B2400B81602 /* LiveTranslationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +444,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We use microphone input to transcribe and visualize audio as text.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We use built-in speech recognition to transcribe audio.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -462,6 +484,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We use microphone input to transcribe and visualize audio as text.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We use built-in speech recognition to transcribe audio.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -617,6 +641,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		26B689352B658B5400B81602 /* XCRemoteSwiftPackageReference "SwiftWhisper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exPHAT/SwiftWhisper?tab=readme-ov-file";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		26C20BD62B65979B003F5CED /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		26B689362B658B5400B81602 /* SwiftWhisper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26B689352B658B5400B81602 /* XCRemoteSwiftPackageReference "SwiftWhisper" */;
+			productName = SwiftWhisper;
+		};
+		26C20BD72B65979B003F5CED /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26C20BD62B65979B003F5CED /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 26B688FF2B658B2400B81602 /* Project object */;
 }
